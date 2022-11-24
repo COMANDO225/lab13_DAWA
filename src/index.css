@@ -1,0 +1,317 @@
+:root {
+	--navHeight: 60px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+}
+
+#root {
+	min-height: 100vh;
+	background-color: #090b28;
+	color: #fff;
+}
+
+.headmasna {
+	/* background-color: aqua; */
+	display: grid;
+	grid-template-columns: 1fr auto;
+	display: flex;
+	height: var(--navHeight);
+	align-items: center;
+	padding: 0 0.75rem;
+	gap: 1rem;
+}
+
+.search_container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* background-color: blueviolet; */
+}
+
+.search_wrapper {
+	/* background-color: aqua; */
+	width: 100%;
+	max-width: 900px;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.search {
+	background-color: rgba(255, 255, 255, 0.25);
+	border: none;
+	border-radius: 1rem;
+	padding: 0.75rem 1rem;
+	outline: none;
+	width: 100%;
+	color: #fff !important;
+	position: relative;
+}
+
+.search::placeholder {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.search_button {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	right: 0.25rem;
+	cursor: pointer;
+	transition: all 0.25s ease;
+	background: transparent;
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.search_button:active {
+	transform: scale(0.85);
+}
+
+.book_app_masna {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	min-height: 100vh;
+}
+
+.bodymasna {
+	padding: 1rem 1rem 0 1rem;
+}
+
+.asideMenu {
+	position: absolute;
+	background-color: #090b28;
+	min-width: 240px;
+	transition: all 0.25s ease;
+}
+
+.aside_wrapper {
+	position: fixed;
+	min-width: 240px;
+	height: 100%;
+	background-color: #091330;
+	z-index: 1;
+	transition: all 0.25s ease;
+	transform: translateX(-100%);
+}
+
+.aside_wrapper.active {
+	transform: translateX(0);
+}
+
+.aside_head {
+	width: 100%;
+	height: var(--navHeight);
+	display: flex;
+	align-items: center;
+	padding-left: 1rem;
+}
+
+.aside_head h1 {
+	font-size: 22px;
+}
+
+.aside_body {
+	padding: 1rem;
+	display: grid;
+	gap: 0.75rem;
+}
+
+.linkNav {
+	padding: 1rem;
+	color: #fff;
+	border-radius: 1.5rem;
+	outline: none !important;
+	text-decoration: none !important;
+	font-weight: 600;
+}
+
+.linkNav.active {
+	background-color: #fff;
+	color: #090b28;
+}
+
+.social_container {
+	display: flex;
+	align-items: center;
+}
+
+.social_link {
+	color: #fff !important;
+}
+
+.estacargandocausa {
+	width: 100%;
+	min-height: 300px;
+	/* background-color: aqua; */
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.lds-hourglass {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+}
+.lds-hourglass:after {
+	content: " ";
+	display: block;
+	border-radius: 50%;
+	width: 0;
+	height: 0;
+	margin: 8px;
+	box-sizing: border-box;
+	border: 32px solid #fff;
+	border-color: #fff transparent #fff transparent;
+	animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+	0% {
+		transform: rotate(0);
+		animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+	50% {
+		transform: rotate(900deg);
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	100% {
+		transform: rotate(1800deg);
+	}
+}
+
+.gridLibros_masna {
+	margin-top: 2rem;
+	padding-bottom: 4rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+	gap: 1rem;
+}
+
+.libroItem {
+	margin-top: 5rem;
+	background-color: blueviolet;
+	padding: 1rem;
+	border-radius: 1rem 1rem 0 0;
+	display: grid;
+	grid-template-columns: 128px 1fr;
+	gap: 1rem;
+	min-height: 150px;
+	position: relative;
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, #111e54 100%);
+}
+
+.bookInfo {
+	width: 100%;
+	height: 100%;
+}
+
+.bookInfo h2 {
+	--lineasMaximas: 2;
+	font-size: 1rem;
+	font-weight: 600;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: var(--lineasMaximas);
+	-webkit-box-orient: vertical;
+}
+
+.bookImage img {
+	position: absolute;
+	width: 128px;
+	height: 192px;
+	object-fit: cover;
+	border-radius: 1rem;
+	overflow: hidden;
+	bottom: 1rem;
+	transform: scale(0.9);
+}
+
+@keyframes respirar {
+	0% {
+		transform: scale(0.9);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(0.9);
+	}
+}
+.tequiero {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.tequiero::after {
+	width: 70%;
+	content: "Te quiero mucho Alee";
+	text-align: center;
+	position: absolute;
+	font-size: 1rem;
+	margin-top: 1.5rem;
+}
+
+.burgerMenu {
+	display: flex;
+	width: 30px;
+	height: 30px;
+	justify-content: center;
+	cursor: pointer;
+	align-items: center;
+	/* background-color: aqua; */
+}
+
+.burgerMenu_line {
+	position: absolute;
+	width: 24px;
+	height: 2px;
+	background-color: #fff;
+	transition: all 0.25s ease;
+}
+
+.burgerMenu_line:nth-child(1) {
+	transform: translateY(-8px);
+}
+
+.burgerMenu_line:nth-child(3) {
+	transform: translateY(8px);
+}
+
+@media (min-width: 1000px) {
+	.book_app_masna {
+		grid-template-columns: auto 1fr;
+	}
+	.asideMenu {
+		position: relative;
+	}
+	.aside_wrapper {
+		position: relative;
+		transform: translateX(0);
+	}
+	.headmasna {
+		display: grid;
+	}
+	.burgerMenu {
+		display: none;
+	}
+}
